@@ -1,0 +1,29 @@
+<h3>All Places you should visit</h3>
+<div class="table-responsive">
+    <table class="table">
+        <tbody>
+            <tr>
+                <td>
+                    <strong>Preview picture</strong>
+                </td>
+                <td>
+                    <strong>Destination</strong>
+                </td>
+                <td>
+                    <strong>Rating</strong>
+                </td>
+            </tr>
+            <tr *ngFor="let place of places">
+                <td>
+                    <img [src]="place.img" width="200rem" [alt]="place.name">
+                </td>
+                <td>
+                    {{place.name}}
+                </td>
+                <td>
+                    {{place.rating}}
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

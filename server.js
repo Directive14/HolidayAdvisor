@@ -34,7 +34,9 @@ app.get('/', function(req, res) {
 // connect to database
 mongoose.connect(config.database);
 let UserModel = require('./server/data/models/User');
+let PlaceModel = require('./server/data/models/Place');
 UserModel.init();
+PlaceModel.init();
 
 // pass passport for configuration
 require('./server/config/passport')(passport);
@@ -43,10 +45,13 @@ require('./server/config/passport')(passport);
 var apiRoutes = express.Router();
 
 let usersController = require('./server/controllers/UsersController');
+let placesContproller = require('./server/controllers/PlacesController');
 // create a new user account (POST http://localhost:3000/api/signup)
 apiRoutes.post('/signup', usersController.postRegister);
 apiRoutes.post('/authenticate', usersController.postAuthenticate);
 apiRoutes.get('/users', usersController.getAll);
+apiRoutes.get('/places', placesContproller.getAll);
+apiRoutes.post('/places', placesContproller.createPlace);
 
 // connect the api routes under /api/*
 app.use('/api', apiRoutes);
