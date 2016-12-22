@@ -48,4 +48,9 @@ export class AuthenticationService {
         // remove user from local storage to log user out
         localStorage.removeItem('currentUser');
     }
+
+     isLoggedIn(){
+        let currentUser = JSON.parse(localStorage.getItem('currentUser'));
+        return currentUser? true:false;
+    }
 }

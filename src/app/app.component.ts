@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import {AuthenticationService} from './_services/index';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-root',
@@ -6,5 +9,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Sample app';
+  constructor(private authService:AuthenticationService,private router:Router){}
+
+  get isLoggedIn(){
+    return this.authService.isLoggedIn();
+  }
+
+  logout(){
+    this.authService.logout();
+    this.router.navigate(['/login']);
+  }
 }
