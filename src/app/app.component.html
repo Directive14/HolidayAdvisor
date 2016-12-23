@@ -1,27 +1,25 @@
 <!-- main app container -->
 
-<nav class="navbar-wrapper.headroom container navbar-header navbar-fixed-top" id="main-navigation">
-
-    <div class="collapse navbar-collapse" id="navigation-index">
-        <ul class="nav navbar-nav navbar-left" *ngIf="isLoggedIn">
-            <li>
-                <a class="navbar-brand" [routerLink]="['/profile']"></a>
-                <img class="navbar-logo" width="30rem"  src="http://www.places-to-go.org.uk/images/Holiday_logo_large.gif" alt="Logo" />
+<nav class="navbar navbar-default navbar-fixed-top" id="main-navigation" style="background-color:lightslategray">
+    <div class="container-fluid">
+        <ul class="nav nav-pills navbar-left" *ngIf="isLoggedIn">
+            <li class="active2">
+                <img class="navbar-logo" width="50rem" src="http://www.bellbridgeps.vic.edu.au/uploads/1/8/7/3/18736602/3513548_orig.png" alt="Logo" />
             </li>
-            <li><a [routerLink]="['/places']">All places</a></li>
-            <li><a [routerLink]="['/createplace']">Add place</a></li>
+            <li class="active2"><a style="color: black" [routerLink]="['/places']">All places</a></li>
+            <li class="active2"><a style="color: black" [routerLink]="['/createplace']">Add place</a></li>
         </ul>
-        <ul class="nav navbar-nav navbar-right" *ngIf="!isLoggedIn">
-            <li class="cd-log_reg home"><a class="cd-signin" [routerLink]="['/login']">Login</a></li>
-            <li class="cd-log_reg"><a class="cd-signup" [routerLink]="['/register']">Register</a></li>
+        <ul class="nav nav-pills navbar-right" *ngIf="!isLoggedIn">
+            <li class="active2"><a style="color: black" [routerLink]="['/login']">Login</a></li>
+            <li class="active2"><a style="color: black" [routerLink]="['/register']">Register</a></li>
         </ul>
-        <ul class="nav navbar-nav navbar-right" *ngIf="isLoggedIn">
-            <li class="cd-log_reg home"><a class="cd-signin" [routerLink]="['/profile']">Profile</a></li>
-            <li class="cd-log_reg home"><a class="cd-signin" [routerLink]="['/logout']" (click)="logout()">Logout</a></li>
+        <ul class="nav nav-pills navbar-right" *ngIf="isLoggedIn">
+            <li class="active2"><a style="color: black" [routerLink]="['/profile']">Profile</a></li>
+            <li class="active2"><a style="color: black" [routerLink]="['/logout']" (click)="logout()">Logout</a></li>
         </ul>
     </div>
-
 </nav>
+
 
 <div class="jumbotron">
     <div class="container">
