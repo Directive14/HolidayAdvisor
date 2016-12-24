@@ -9,12 +9,12 @@ import { routing } from './app.routing';
 
 import { AlertComponent } from './_directives/index';
 import { AuthGuard } from './_guards/index';
-import { AlertService, AuthenticationService, UserService } from './_services/index';
-import { HomeComponent } from './home/index';
-import { LoginComponent } from './login/index';
-import { RegisterComponent } from './register/index';
-import { PlaceListComponent } from './components/place-list.component';
-import {CreatePlaceComponent} from './components/create-place.component';
+import { AlertService, AuthenticationService, UserService } from './_services';
+import { HomeComponent } from './page-components/home';
+import { LoginComponent } from './page-components/login';
+import { RegisterComponent } from './page-components/register';
+import { PlaceListComponent } from './page-components/places-list';
+import {CreatePlaceComponent} from './page-components/create-place';
 
 @NgModule({
     imports: [

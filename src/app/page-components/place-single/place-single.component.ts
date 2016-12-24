@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import {Place} from '../_models/index';
+import {Place} from '../../_models';
 
 @Component({
     templateUrl: './place-list.component.html'

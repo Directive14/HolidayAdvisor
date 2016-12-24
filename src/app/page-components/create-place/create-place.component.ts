@@ -1,8 +1,8 @@
 import { Component, Input } from '@angular/core';
-import { Place } from '../_models/index';
+import { Place } from '../../_models';
 import { Http, Response, Headers } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
-import { AlertService, UserService } from '../_services/index';
+import { AlertService, UserService } from '../../_services';
 import { Router } from '@angular/router';
 
 @Component({

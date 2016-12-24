@@ -1,12 +1,12 @@
 import { Routes, RouterModule } from '@angular/router';
 import { ModuleWithProviders } from '@angular/core';
 
-import { HomeComponent } from './home/index';
-import { LoginComponent } from './login/index';
-import { RegisterComponent } from './register/index';
-import { PlaceListComponent } from './components/place-list.component';
-import { CreatePlaceComponent } from './components/create-place.component';
-import { AuthGuard } from './_guards/index';
+import { HomeComponent } from './page-components/home';
+import { LoginComponent } from './page-components/login';
+import { RegisterComponent } from './page-components/register';
+import { PlaceListComponent } from './page-components/places-list';
+import { CreatePlaceComponent } from './page-components/create-place';
+import { AuthGuard } from './_guards';
 
 const appRoutes: Routes = [
     { path: '', component: HomeComponent, canActivate: [AuthGuard] },
