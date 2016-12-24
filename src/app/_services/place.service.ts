@@ -1,13 +1,20 @@
 import { Injectable } from '@angular/core';
 import { Http, Headers, RequestOptions, Response } from '@angular/http';
-import {Observable} from 'rxjs/Observable';
+import { Observable } from 'rxjs/Observable';
 
 @Injectable()
-export class PlacesService{
-    constructor(private http:Http){}
+export class PlacesService {
+    private url: string = 'http://localhost:3000/api/places';
 
-    createPlace(place){
-       return this.http.post('http://localhost:3000/api/places',place)
+    constructor(private http: Http) { }
+
+    createPlace(place) {
+        return this.http.post(this.url, place)
+            .map((res: Response) => res.json())
+    }
+
+    getAll() {
+        return this.http.get(this.url)
             .map((res: Response) => res.json())
     }
 }
