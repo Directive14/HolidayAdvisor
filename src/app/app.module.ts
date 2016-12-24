@@ -9,12 +9,14 @@ import { routing } from './app.routing';
 
 import { AlertComponent } from './_directives/index';
 import { AuthGuard } from './_guards/index';
-import { AlertService, AuthenticationService, UserService, PlacesService } from './_services';
+import { AlertService, AuthenticationService, UserService, PlacesService, PartnerService} from './_services';
 import { HomeComponent } from './page-components/home';
 import { LoginComponent } from './page-components/login';
 import { RegisterComponent } from './page-components/register';
 import { PlaceListComponent } from './page-components/places-list';
+import { PartnerListComponent} from './page-components/partners-list';
 import {CreatePlaceComponent} from './page-components/create-place';
+import {CreatePartnerComponent} from './page-components/create-partner';
 
 @NgModule({
     imports: [
@@ -30,14 +32,16 @@ import {CreatePlaceComponent} from './page-components/create-place';
         LoginComponent,
         RegisterComponent,
         PlaceListComponent,
-        CreatePlaceComponent
+        CreatePlaceComponent,
+        CreatePartnerComponent
     ],
     providers: [
         AuthGuard,
         AlertService,
         AuthenticationService,
         UserService,
-        PlacesService
+        PlacesService,
+        PartnerService
     ],
     bootstrap: [AppComponent]
 })

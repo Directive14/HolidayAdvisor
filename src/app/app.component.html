@@ -9,6 +9,10 @@
             <li class="active2"><a style="color: black" [routerLink]="['/places']">All places</a></li>
             <li class="active2"><a style="color: black" [routerLink]="['/createplace']">Add place</a></li>
         </ul>
+        <ul class="nav nav-pills navbar-left" *ngIf="isLoggedIn">
+            <li class="active2"><a style="color: black" [routerLink]="['/createPartner']">Create partner</a></li>
+            <li class="active2"><a style="color: black" [routerLink]="['/partners']">View our partners</a></li>
+        </ul>
         <ul class="nav nav-pills navbar-right" *ngIf="!isLoggedIn">
             <li class="active2"><a style="color: black" [routerLink]="['/login']">Login</a></li>
             <li class="active2"><a style="color: black" [routerLink]="['/register']">Register</a></li>
