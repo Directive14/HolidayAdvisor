@@ -30,12 +30,14 @@ export class LoginComponent implements OnInit {
         this.loading = true;
         this.authenticationService.login(this.model.username, this.model.password)
             .subscribe(
-                data => {
-                    this.router.navigate([this.returnUrl]);
-                },
-                error => {
-                    this.alertService.error(error);
-                    this.loading = false;
-                });
+            data => {
+                this.alertService.success(`User ${this.model.username} logged in successful!`, true)
+                this.router.navigate([this.returnUrl]);
+            },
+            error => {
+                let message = JSON.parse(error._body);
+                this.alertService.error(message.err, true);
+                this.loading = false;
+            });
     }
 }
