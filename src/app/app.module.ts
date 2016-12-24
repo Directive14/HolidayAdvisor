@@ -9,7 +9,7 @@ import { routing } from './app.routing';
 
 import { AlertComponent } from './_directives/index';
 import { AuthGuard } from './_guards/index';
-import { AlertService, AuthenticationService, UserService } from './_services';
+import { AlertService, AuthenticationService, UserService, PlacesService } from './_services';
 import { HomeComponent } from './page-components/home';
 import { LoginComponent } from './page-components/login';
 import { RegisterComponent } from './page-components/register';
@@ -37,6 +37,7 @@ import {CreatePlaceComponent} from './page-components/create-place';
         AlertService,
         AuthenticationService,
         UserService,
+        PlacesService
     ],
     bootstrap: [AppComponent]
 })

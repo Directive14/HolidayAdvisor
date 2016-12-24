@@ -2,7 +2,7 @@ import { Component, Input } from '@angular/core';
 import { Place } from '../../_models';
 import { Http, Response, Headers } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
-import { AlertService, UserService } from '../../_services';
+import { AlertService, UserService, PlacesService } from '../../_services';
 import { Router } from '@angular/router';
 
 @Component({
@@ -16,7 +16,8 @@ export class CreatePlaceComponent {
         private http: Http,
         private router: Router,
         private userService: UserService,
-        private alertService: AlertService
+        private alertService: AlertService,
+        private placeService: PlacesService
     ) {
         this.place = {
             img: '',
@@ -24,15 +25,12 @@ export class CreatePlaceComponent {
             rating: 1
         }
     }
-    // createPlace(place: Place) {
-    //     this.http.post('http://localhost:3000/api/places', this.place)
-    // }
+   
     onSubmit() {
-        this.http.post('http://localhost:3000/api/places', this.place)
-            .map((res: Response) => res.json())
+        this.placeService.createPlace(this.place)
             .subscribe(
             data => {
-                this.alertService.success(`${this.place.name} added successful`, true);
+                this.alertService.success(`${this.place.name} added successful to places gallery`, true);
                 this.router.navigate(['/places']);
             },
             error => {
