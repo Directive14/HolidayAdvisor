@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+import { CarouselModule } from 'ng2-bootstrap/carousel';
 
 
 import { AppComponent } from './app.component';
@@ -23,7 +24,8 @@ import {CreatePartnerComponent} from './page-components/create-partner';
         BrowserModule,
         FormsModule,
         HttpModule,
-        routing
+        routing,
+        CarouselModule.forRoot()
     ],
     declarations: [
         AppComponent,

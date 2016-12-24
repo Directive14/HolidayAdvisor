@@ -11,7 +11,7 @@ import { PartnerListComponent} from  './page-components/partners-list';
 import { AuthGuard } from './_guards';
 
 const appRoutes: Routes = [
-    { path: '', component: HomeComponent, canActivate: [AuthGuard] },
+    { path: 'home', component: HomeComponent },
     { path: 'login', component: LoginComponent },
     { path: 'register', component: RegisterComponent },
     { path: 'places', component: PlaceListComponent },
@@ -19,7 +19,8 @@ const appRoutes: Routes = [
     { path: 'createPartner', component : CreatePartnerComponent},
     { path: 'partners', component : CreatePartnerComponent},
     // otherwise redirect to home
-    { path: '**', redirectTo: '' }
+    { path: '**', redirectTo: 'home' },
+    { path: '', redirectTo: 'home', pathMatch:'full'}
 ];
 
 export const routing = RouterModule.forRoot(appRoutes);

@@ -10,7 +10,6 @@ import { AlertService, AuthenticationService } from '../../_services';
 export class LoginComponent implements OnInit {
     model: any = {};
     loading = false;
-    returnUrl: string;
 
     constructor(
         private route: ActivatedRoute,
@@ -21,9 +20,6 @@ export class LoginComponent implements OnInit {
     ngOnInit() {
         // reset login status
         this.authenticationService.logout();
-
-        // get return url from route parameters or default to '/'
-        this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
     }
 
     login() {
@@ -32,7 +28,7 @@ export class LoginComponent implements OnInit {
             .subscribe(
             data => {
                 this.alertService.success(`User ${this.model.username} logged in successful!`, true)
-                this.router.navigate([this.returnUrl]);
+                this.router.navigate(['/home']);
             },
             error => {
                 let message = JSON.parse(error._body);
