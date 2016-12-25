@@ -16,7 +16,7 @@ div.jumbotron {
     background-repeat: repeat-y;
     background-attachment: fixed;
     margin-bottom: 0px;
-    height: 140vh;
+    min-height: 100vh;
 }
 
 .wrapper {
