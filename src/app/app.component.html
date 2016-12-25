@@ -1,45 +1,46 @@
 <!-- main app container -->
+<div class="wrapper" style="width:100%">
+    <nav class="navbar navbar-default navbar-fixed-top" id="main-navigation" style="background-image: url(http://www.planwallpaper.com/static/images/vladstudio-squares-Cool-Background.jpg)">
+        <div class="container-fluid">
+            <ul class="nav nav-pills navbar-left" *ngIf="isLoggedIn">
+                <li class="active2">
+                    <img class="navbar-logo" width="50rem" src="http://www.bellbridgeps.vic.edu.au/uploads/1/8/7/3/18736602/3513548_orig.png" alt="Logo" />
+                </li>
+                <li class="active2"><a style="color: black" [routerLink]="['/places']">All places</a></li>
+                <li class="active2"><a style="color: black" [routerLink]="['/createplace']">Add place</a></li>
+            </ul>
+            <ul class="nav nav-pills navbar-left" *ngIf="isLoggedIn">
+                <li class="active2"><a style="color: black" [routerLink]="['/createPartner']">Create partner</a></li>
+                <li class="active2"><a style="color: black" [routerLink]="['/partners']">View our partners</a></li>
+            </ul>
+            <ul class="nav nav-pills navbar-right" *ngIf="!isLoggedIn">
+                <li class="active2"><a style="color: black" [routerLink]="['/login']">Login</a></li>
+                <li class="active2"><a style="color: black" [routerLink]="['/register']">Register</a></li>
+            </ul>
+            <ul class="nav nav-pills navbar-right" *ngIf="isLoggedIn">
+                <li class="active2"><a style="color: black" [routerLink]="['/profile']">Profile</a></li>
+                <li class="active2"><a style="color: black" [routerLink]="['/logout']" (click)="logout()">Logout</a></li>
+            </ul>
+        </div>
+    </nav>
 
-<nav class="navbar navbar-default navbar-fixed-top" id="main-navigation" style="background-color:lightslategray">
-    <div class="container-fluid">
-        <ul class="nav nav-pills navbar-left" *ngIf="isLoggedIn">
-            <li class="active2">
-                <img class="navbar-logo" width="50rem" src="http://www.bellbridgeps.vic.edu.au/uploads/1/8/7/3/18736602/3513548_orig.png" alt="Logo" />
-            </li>
-            <li class="active2"><a style="color: black" [routerLink]="['/places']">All places</a></li>
-            <li class="active2"><a style="color: black" [routerLink]="['/createplace']">Add place</a></li>
-        </ul>
-        <ul class="nav nav-pills navbar-left" *ngIf="isLoggedIn">
-            <li class="active2"><a style="color: black" [routerLink]="['/createPartner']">Create partner</a></li>
-            <li class="active2"><a style="color: black" [routerLink]="['/partners']">View our partners</a></li>
-        </ul>
-        <ul class="nav nav-pills navbar-right" *ngIf="!isLoggedIn">
-            <li class="active2"><a style="color: black" [routerLink]="['/login']">Login</a></li>
-            <li class="active2"><a style="color: black" [routerLink]="['/register']">Register</a></li>
-        </ul>
-        <ul class="nav nav-pills navbar-right" *ngIf="isLoggedIn">
-            <li class="active2"><a style="color: black" [routerLink]="['/profile']">Profile</a></li>
-            <li class="active2"><a style="color: black" [routerLink]="['/logout']" (click)="logout()">Logout</a></li>
-        </ul>
-    </div>
-</nav>
 
-
-<div class="jumbotron">
-    <div class="container">
-        <div class="col-sm-8 col-sm-offset-2">
-            <alert></alert>
-            <router-outlet></router-outlet>
+    <div class="jumbotron" style="background-image: url(http://www.wallpaperandphoto.com/wp-content/uploads/2016/01/white_damask_background-wallpaper-2560x1600.jpg);background-repeat: repeat-x;background-attachment: fixed; margin-bottom: 0px">
+        <div class="container">
+            <div class="col-sm-8 col-sm-offset-2">
+                <alert></alert>
+                <router-outlet></router-outlet>
+            </div>
         </div>
     </div>
-</div>
 
-<!-- credits -->
-<div class="text-center">
-    <p>
-        Angular 2 SPA
-    </p>
-    <p>
-        Team "Directive 14"
-    </p>
+    <!-- credits -->
+    <footer class="navbar-fixed-bottom text-center" style="background-image: url(http://www.planwallpaper.com/static/images/vladstudio-squares-Cool-Background.jpg)">
+        <p style="color: black">
+            Angular 2 SPA
+        </p>
+        <p style="color: black">
+            Team "Directive 14"
+        </p>
+    </footer>
 </div>
