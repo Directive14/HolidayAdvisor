@@ -18,6 +18,7 @@ import { PlaceListComponent } from './page-components/places-list';
 import { PartnerListComponent} from './page-components/partners-list';
 import {CreatePlaceComponent} from './page-components/create-place';
 import {CreatePartnerComponent} from './page-components/create-partner';
+import { StarRatingComponent } from './page-components/star-rating/star-rating.component';
 
 @NgModule({
     imports: [
@@ -36,7 +37,8 @@ import {CreatePartnerComponent} from './page-components/create-partner';
         PlaceListComponent,
         CreatePlaceComponent,
         CreatePartnerComponent,
-        PartnerListComponent
+        PartnerListComponent,
+        StarRatingComponent
     ],
     providers: [
         AuthGuard,
