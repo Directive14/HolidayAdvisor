@@ -16,8 +16,8 @@ const appRoutes: Routes = [
     { path: 'register', component: RegisterComponent },
     { path: 'places', component: PlaceListComponent },
     { path: 'createplace', component: CreatePlaceComponent },
+    { path: 'partners', component : PartnerListComponent},
     { path: 'createPartner', component : CreatePartnerComponent},
-    { path: 'partners', component : CreatePartnerComponent},
     // otherwise redirect to home
     { path: '**', redirectTo: 'home' },
     { path: '', redirectTo: 'home', pathMatch:'full'}

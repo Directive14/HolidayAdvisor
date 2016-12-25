@@ -1,4 +1,4 @@
-const User = require('mongoose').model('Partner');
+const Partner = require('mongoose').model('Partner');
 
 module.exports = {
     create: function(partner, callback) {

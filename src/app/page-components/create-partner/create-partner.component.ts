@@ -21,7 +21,8 @@ export class CreatePartnerComponent {
     ) {
         this.partner = {
             name: '',
-            officeAddresses: ''
+            officeAddresses: '',
+            webAddress: ''
         };
     }
 

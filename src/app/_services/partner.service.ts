@@ -4,7 +4,7 @@ import { Observable } from 'rxjs/Observable';
 
 @Injectable()
 export class PartnerService {
-    private url: string = 'http://localhost:3000/api/partner';
+    private url: string = 'http://localhost:3000/api/partners';
 
     constructor(private http: Http) { }
 

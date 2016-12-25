@@ -6,7 +6,7 @@ import { PartnerService } from '../../_services';
 
 
 @Component({
-    templateUrl: './place-list.component.html'
+    templateUrl: './partners-list.component.html'
 })
 export class PartnerListComponent implements OnInit {
     @Input() partners: Partner[];
@@ -18,6 +18,6 @@ export class PartnerListComponent implements OnInit {
     }
     ngOnInit() {
         this.partnerService.getAll()
-            .subscribe(placesJson => this.partners.push(...placesJson));
+            .subscribe(partnersJson => this.partners.push(...partnersJson));
     }
 }

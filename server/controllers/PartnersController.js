@@ -18,7 +18,7 @@ function getAll(req, res) {
     });
 }
 
-function createPlace(req, res) {
+function createPartner(req, res) {
     let newPartner = req.body;
     Partner.create(newPartner).then(res.send(newPartner));
 }

@@ -35,7 +35,8 @@ import {CreatePartnerComponent} from './page-components/create-partner';
         RegisterComponent,
         PlaceListComponent,
         CreatePlaceComponent,
-        CreatePartnerComponent
+        CreatePartnerComponent,
+        PartnerListComponent
     ],
     providers: [
         AuthGuard,
