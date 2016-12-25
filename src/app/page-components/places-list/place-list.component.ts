@@ -3,12 +3,14 @@ import { Http, Response, Headers } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 import { Place } from '../../_models';
 import { PlacesService } from '../../_services';
-
+import { StarRatingComponent } from '../star-rating';
 
 @Component({
     templateUrl: './place-list.component.html'
 })
 export class PlaceListComponent implements OnInit {
+    ratingClicked: number;
+    itemIdRatingClicked: number;
     @Input() places: Place[];
     constructor(
         private http: Http,
@@ -20,4 +22,12 @@ export class PlaceListComponent implements OnInit {
         this.placesService.getAll()
             .subscribe(placesJson => this.places.push(...placesJson));
     }
+    ratingComponetClick(clickObj: any): void {
+      let item = this.places.filter((item: any) => item._id === clickObj.itemId);
+      if(!!item && item.length === 1){
+        item[0].rating = clickObj.rating;
+        this.ratingClicked = clickObj.rating;
+        this.itemIdRatingClicked = clickObj.itemId;
+      }
+}
 }
