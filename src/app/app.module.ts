@@ -10,15 +10,16 @@ import { routing } from './app.routing';
 
 import { AlertComponent } from './_directives/index';
 import { AuthGuard } from './_guards/index';
-import { AlertService, AuthenticationService, UserService, PlacesService, PartnerService} from './_services';
+import { AlertService, AuthenticationService, UserService, PlacesService, PartnerService } from './_services';
 import { HomeComponent } from './page-components/home';
 import { LoginComponent } from './page-components/login';
 import { RegisterComponent } from './page-components/register';
 import { PlaceListComponent } from './page-components/places-list';
-import { PartnerListComponent} from './page-components/partners-list';
-import {CreatePlaceComponent} from './page-components/create-place';
-import {CreatePartnerComponent} from './page-components/create-partner';
+import { PartnerListComponent } from './page-components/partners-list';
+import { CreatePlaceComponent } from './page-components/create-place';
+import { CreatePartnerComponent } from './page-components/create-partner';
 import { StarRatingComponent } from './page-components/star-rating/star-rating.component';
+import { FilterPlaces, SortPlacesBy } from './_pipes';
 
 @NgModule({
     imports: [
@@ -38,7 +39,9 @@ import { StarRatingComponent } from './page-components/star-rating/star-rating.c
         CreatePlaceComponent,
         CreatePartnerComponent,
         PartnerListComponent,
-        StarRatingComponent
+        StarRatingComponent,
+        FilterPlaces,
+        SortPlacesBy
     ],
     providers: [
         AuthGuard,

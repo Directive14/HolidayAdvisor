@@ -1,9 +1,9 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
-    name: 'sortPlacesByName'
+    name: 'sortPlacesBy'
 })
-export class SortPlacesByName implements PipeTransform {
+export class SortPlacesBy implements PipeTransform {
     transform(places: any[], sortBy: string, orderBy: string) {
         if (sortBy) {
             if (orderBy === 'Ascending') {
