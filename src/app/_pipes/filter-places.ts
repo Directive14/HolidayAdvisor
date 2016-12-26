@@ -8,6 +8,6 @@ export class FilterPlaces implements PipeTransform{
         if(input===""){
             return places;
         }
-       return places.filter(place=>place.Title.toLowerCase().includes(input.toLowerCase()));
+       return places.filter(place=>place.name.toLowerCase().includes(input.toLowerCase()));
     }
 }

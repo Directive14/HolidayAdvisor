@@ -22,6 +22,13 @@ export class PlaceListComponent implements OnInit {
         this.placesService.getAll()
             .subscribe(placesJson => this.places.push(...placesJson));
     }
+
+     SearchByTitle(value:any){
+       // console.log(value);
+         let result=[].concat(this.places);
+         return result.filter(p=>p.name.indexOf(value)>0); 
+    }
+
     ratingComponetClick(clickObj: any): void {
         let item = this.places.filter((item: any) => item._id === clickObj.itemId);
         if (!!item && item.length === 1) {
