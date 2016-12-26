@@ -23,11 +23,12 @@ export class PlaceListComponent implements OnInit {
             .subscribe(placesJson => this.places.push(...placesJson));
     }
     ratingComponetClick(clickObj: any): void {
-      let item = this.places.filter((item: any) => item._id === clickObj.itemId);
-      if(!!item && item.length === 1){
-        item[0].rating = clickObj.rating;
-        this.ratingClicked = clickObj.rating;
-        this.itemIdRatingClicked = clickObj.itemId;
-      }
-}
+        let item = this.places.filter((item: any) => item._id === clickObj.itemId);
+        if (!!item && item.length === 1) {
+            item[0].rating = clickObj.rating;
+            this.ratingClicked = clickObj.rating;
+            this.itemIdRatingClicked = clickObj.itemId;
+            this.placesService.updatePlace(item[0]).subscribe(dbItem=>item[0].rating=dbItem.rating)
+        }
+    }
 }

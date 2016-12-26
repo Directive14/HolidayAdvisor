@@ -13,6 +13,7 @@ const express = require('express'),
 app.use(function(req, res, next) {
     res.header("Access-Control-Allow-Origin", "*");
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT ,DELETE');
     next();
 });
 
@@ -55,8 +56,9 @@ apiRoutes.post('/authenticate', usersController.postAuthenticate);
 apiRoutes.get('/users', usersController.getAll);
 apiRoutes.get('/places', placesContproller.getAll);
 apiRoutes.post('/places', placesContproller.createPlace);
-apiRoutes.get('/partners',PartnersController.getAll);
-apiRoutes.post('/partners',PartnersController.createPartner);
+apiRoutes.put('/places', placesContproller.updatePlace);
+apiRoutes.get('/partners', PartnersController.getAll);
+apiRoutes.post('/partners', PartnersController.createPartner);
 
 // connect the api routes under /api/*
 app.use('/api', apiRoutes);

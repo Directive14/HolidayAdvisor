@@ -23,7 +23,13 @@ function createPlace(req, res) {
     Place.create(newPlace).then(res.send(newPlace));
 }
 
+function updatePlace(req, res) {
+    let placeToUpdate = req.body;
+    Place.update(placeToUpdate).then(res.send(placeToUpdate))
+}
+
 module.exports = {
     getAll,
-    createPlace
+    createPlace,
+    updatePlace
 };

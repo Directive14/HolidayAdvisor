@@ -17,4 +17,9 @@ export class PlacesService {
         return this.http.get(this.url)
             .map((res: Response) => res.json())
     }
+
+    updatePlace(place){
+        return this.http.put(this.url,place)
+            .map((res: Response) => res.json())
+    }
 }
