@@ -24,8 +24,14 @@ function createPlace(req, res) {
 }
 
 function updatePlace(req, res) {
-    let placeToUpdate = req.body;
-    Place.update(placeToUpdate).then(res.send(placeToUpdate))
+    Place.findById(req.body._id, function(err, p) {
+        if (!p)
+            throw Error('Could not load Document');
+        else {
+            p.rating = req.body.rating;
+            p.save().then(res.send(p));
+        }
+    });
 }
 
 module.exports = {
