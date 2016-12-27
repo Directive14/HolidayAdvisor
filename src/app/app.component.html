@@ -6,21 +6,21 @@
                 <li class="active2">
                     <img class="navbar-logo" width="50rem" src="../images/holidayLogo.png" alt="Logo" />
                 </li>
-                <li class="active2"><a [routerLink]="['/home']">Home</a></li>
-                <li class="active2"><a [routerLink]="['/places']">All places</a></li>
-                <li class="active2"><a [routerLink]="['/createplace']">Add place</a></li>
+                <li appNavigationHover class="active2"><a [routerLink]="['/home']">Home</a></li>
+                <li appNavigationHover class="active2"><a [routerLink]="['/places']">All places</a></li>
+                <li appNavigationHover class="active2"><a [routerLink]="['/createplace']">Add place</a></li>
             </ul>
             <ul class="nav nav-pills navbar-left" *ngIf="isLoggedIn">
-                <li class="active2"><a [routerLink]="['/createPartner']">Create partner</a></li>
-                <li class="active2"><a [routerLink]="['/partners']">View our partners</a></li>
+                <li appNavigationHover class="active2"><a [routerLink]="['/createPartner']">Create partner</a></li>
+                <li appNavigationHover class="active2"><a [routerLink]="['/partners']">View our partners</a></li>
             </ul>
             <ul class="nav nav-pills navbar-right" *ngIf="!isLoggedIn">
-                <li class="active2"><a [routerLink]="['/login']">Login</a></li>
-                <li class="active2"><a [routerLink]="['/register']">Register</a></li>
+                <li appNavigationHover class="active2"><a [routerLink]="['/login']">Login</a></li>
+                <li appNavigationHover class="active2"><a [routerLink]="['/register']">Register</a></li>
             </ul>
             <ul class="nav nav-pills navbar-right" *ngIf="isLoggedIn">
-                <li class="active2"><a [routerLink]="['/profile']">Profile</a></li>
-                <li class="active2"><a [routerLink]="['/logout']" (click)="logout()">Logout</a></li>
+                <li appNavigationHover class="active2"><a [routerLink]="['/profile']">Profile</a></li>
+                <li appNavigationHover class="active2"><a [routerLink]="['/logout']" (click)="logout()">Logout</a></li>
             </ul>
         </div>
     </nav>

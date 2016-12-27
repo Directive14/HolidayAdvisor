@@ -8,7 +8,7 @@ import { CarouselModule } from 'ng2-bootstrap/carousel';
 import { AppComponent } from './app.component';
 import { routing } from './app.routing';
 
-import { AlertComponent } from './_directives/index';
+import { AlertComponent, NavigationHoverDirective } from './_directives/index';
 import { AuthGuard } from './_guards/index';
 import { AlertService, AuthenticationService, UserService, PlacesService, PartnerService } from './_services';
 import { HomeComponent } from './page-components/home';
@@ -41,7 +41,8 @@ import { FilterPlaces, SortPlacesBy } from './_pipes';
         PartnerListComponent,
         StarRatingComponent,
         FilterPlaces,
-        SortPlacesBy
+        SortPlacesBy,
+        NavigationHoverDirective
     ],
     providers: [
         AuthGuard,
