@@ -20,6 +20,7 @@ import { CreatePlaceComponent } from './page-components/create-place';
 import { CreatePartnerComponent } from './page-components/create-partner';
 import { StarRatingComponent } from './page-components/star-rating/star-rating.component';
 import { FilterPlaces, SortPlacesBy } from './_pipes';
+import { DropdownNotClosableZone, Dropdown, DropdownOpen } from './_directives/index';
 
 @NgModule({
     imports: [
@@ -42,7 +43,10 @@ import { FilterPlaces, SortPlacesBy } from './_pipes';
         StarRatingComponent,
         FilterPlaces,
         SortPlacesBy,
-        NavigationHoverDirective
+        NavigationHoverDirective,
+        Dropdown,
+        DropdownNotClosableZone,
+        DropdownOpen
     ],
     providers: [
         AuthGuard,
