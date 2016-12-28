@@ -70,12 +70,13 @@ function getSingleUserData(req, res) {
                 firstName: user.firstName,
                 lastName: user.lastName,
                 _id: user._id,
-                //age: user.age,
-                //gender: user.gender,
-                //email: user.email,
-                //about: user.about,
-                //image: user.image,
-                //rating: user.rating,
+                age: user.age,
+                gender: user.gender,
+                email: user.email,
+                about: user.about,
+                image: user.image,
+                rating: user.rating,
+                createdOn: user.createdOn
             }
         });
     });
