@@ -15,6 +15,7 @@ import { HomeComponent } from './page-components/home';
 import { LoginComponent } from './page-components/login';
 import { RegisterComponent } from './page-components/register';
 import { PlaceListComponent } from './page-components/places-list';
+import { PlaceSingleComponent } from './page-components/place-single';
 import { PartnerListComponent } from './page-components/partners-list';
 import { CreatePlaceComponent } from './page-components/create-place';
 import { CreatePartnerComponent } from './page-components/create-partner';
@@ -43,6 +44,7 @@ import {GoogleMapComponent} from './page-components/google-map';
         LoginComponent,
         RegisterComponent,
         PlaceListComponent,
+        PlaceSingleComponent,
         CreatePlaceComponent,
         CreatePartnerComponent,
         PartnerListComponent,
