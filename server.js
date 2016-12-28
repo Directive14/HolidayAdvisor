@@ -57,6 +57,7 @@ apiRoutes.get('/users', usersController.getAll);
 apiRoutes.get("/users/:id", usersController.getSingleUserData);
 apiRoutes.put("/users/:id", usersController.updateUserData);
 apiRoutes.get('/places', placesContproller.getAll);
+apiRoutes.get('/places/:name', placesContproller.getByName);
 apiRoutes.post('/places', placesContproller.createPlace);
 apiRoutes.put('/places', placesContproller.updatePlace);
 apiRoutes.get('/partners', PartnersController.getAll);
