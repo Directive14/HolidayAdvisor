@@ -9,6 +9,17 @@ module.exports.init = function() {
         lastName: String,
         salt: String,
         hashPass: String
+            // age: Number,
+            // gender: String,
+            // email: {
+            //     type: String,
+            //     unique: true,
+            //     match: [/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/, 'Please fill a valid email address'],
+            //     require: requiredMessage
+            // },
+            // about: { type: String, default: 'Write something about yourself' },
+            //image: { type: String, default: 'http://tr3.cbsistatic.com/fly/bundles/techrepubliccore/images/icons/standard/icon-user-default.png' },
+            // rating: { type: Number, default: 0 },
     });
 
     userSchema.method({
