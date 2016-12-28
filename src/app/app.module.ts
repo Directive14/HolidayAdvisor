@@ -18,6 +18,7 @@ import { PlaceListComponent } from './page-components/places-list';
 import { PartnerListComponent } from './page-components/partners-list';
 import { CreatePlaceComponent } from './page-components/create-place';
 import { CreatePartnerComponent } from './page-components/create-partner';
+import { ProfileComponent } from './page-components/profile';
 import { StarRatingComponent } from './page-components/star-rating/star-rating.component';
 import { FilterPlaces, SortPlacesBy } from './_pipes';
 import { DropdownNotClosableZone, Dropdown, DropdownOpen } from './_directives/index';
@@ -41,6 +42,7 @@ import { DropdownNotClosableZone, Dropdown, DropdownOpen } from './_directives/i
         CreatePartnerComponent,
         PartnerListComponent,
         StarRatingComponent,
+        ProfileComponent,
         FilterPlaces,
         SortPlacesBy,
         NavigationHoverDirective,
