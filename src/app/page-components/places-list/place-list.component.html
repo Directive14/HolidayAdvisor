@@ -21,7 +21,7 @@
 </form>
 <br/>
 <div class="table-responsive">
-    <table class="table">
+    <table id="places-container" class="table">
         <tbody>
             <tr>
                 <td>
@@ -43,6 +43,9 @@
                 </td>
                 <td>
                     <app-star-rating [rating]='place.rating' [itemId]='place._id' (ratingClick)='ratingComponetClick($event)'></app-star-rating>
+                </td>
+                <td id="google-map">
+                    <div><app-googlemap [lat]='place.lat' [lng]='place.lng'>View on map</app-googlemap></div>
                 </td>
             </tr>
         </tbody>

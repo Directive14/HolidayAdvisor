@@ -22,6 +22,8 @@ import { ProfileComponent } from './page-components/profile';
 import { StarRatingComponent } from './page-components/star-rating/star-rating.component';
 import { FilterPlaces, SortPlacesBy } from './_pipes';
 import { DropdownNotClosableZone, Dropdown, DropdownOpen } from './_directives/index';
+import { AgmCoreModule } from 'angular2-google-maps/core';
+import {GoogleMapComponent} from './page-components/google-map';
 
 @NgModule({
     imports: [
@@ -29,7 +31,10 @@ import { DropdownNotClosableZone, Dropdown, DropdownOpen } from './_directives/i
         FormsModule,
         HttpModule,
         routing,
-        CarouselModule.forRoot()
+        CarouselModule.forRoot(),
+        AgmCoreModule.forRoot({
+        apiKey: 'AIzaSyBUNOpKQmGUbyUscx6cY9ElcEXLxws66ac'
+        })
     ],
     declarations: [
         AppComponent,
@@ -48,7 +53,8 @@ import { DropdownNotClosableZone, Dropdown, DropdownOpen } from './_directives/i
         NavigationHoverDirective,
         Dropdown,
         DropdownNotClosableZone,
-        DropdownOpen
+        DropdownOpen,
+        GoogleMapComponent
     ],
     providers: [
         AuthGuard,
