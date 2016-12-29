@@ -2,16 +2,16 @@
 <div class="wrapper">
     <nav class="navbar navbar-default navbar-fixed-top" id="main-navigation">
         <div class="container-fluid">
-            <ul class="nav nav-pills navbar-left" *ngIf="isLoggedIn">
+            <ul class="nav nav-pills navbar-left">
                 <li class="active2">
                     <img class="navbar-logo" width="50rem" src="../images/holidayLogo.png" alt="Logo" />
                 </li>
                 <li [@movePanel]='state' appNavigationHover class="active2"><a [routerLink]="['/home']">Home</a></li>
-                <li [@movePanel]='state' appNavigationHover class="active2"><a [routerLink]="['/places']">All places</a></li>
-                <li [@movePanel]='state' appNavigationHover class="active2"><a [routerLink]="['/createplace']">Add place</a></li>
+                <li *ngIf="isLoggedIn" [@movePanel]='state' appNavigationHover class="active2"><a [routerLink]="['/places']">All places</a></li>
+                <li *ngIf="isLoggedIn" [@movePanel]='state' appNavigationHover class="active2"><a [routerLink]="['/createplace']">Add place</a></li>
             </ul>
-            <ul class="nav nav-pills navbar-left" *ngIf="isLoggedIn">
-                <li [@movePanel]='state' appNavigationHover class="active2"><a [routerLink]="['/createPartner']">Create partner</a></li>
+            <ul class="nav nav-pills navbar-left">
+                <li *ngIf="isLoggedIn" [@movePanel]='state' appNavigationHover class="active2"><a [routerLink]="['/createPartner']">Create partner</a></li>
                 <li [@movePanel]='state' appNavigationHover class="active2"><a [routerLink]="['/partners']">View our partners</a></li>
             </ul>
             <ul class="nav nav-pills navbar-right" *ngIf="!isLoggedIn">
