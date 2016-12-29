@@ -2,6 +2,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { ModuleWithProviders } from '@angular/core';
 
 import { HomeComponent } from './page-components/home';
+import { AboutComponent } from './page-components/about';
 import { LoginComponent } from './page-components/login';
 import { RegisterComponent } from './page-components/register';
 import { ProfileComponent } from './page-components/profile';
@@ -17,6 +18,7 @@ import { AuthGuard } from './_guards';
 
 const appRoutes: Routes = [
     { path: 'home', component: HomeComponent },
+    { path: 'about', component: AboutComponent },
     { path: 'login', component: LoginComponent },
     { path: 'register', component: RegisterComponent },
     { path: 'profile', component: ProfileComponent },
