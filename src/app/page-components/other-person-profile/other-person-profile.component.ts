@@ -21,7 +21,6 @@ export class OtherPersonProfileComponent{
             .subscribe(params => {
                 this.routParams = params['username'];
             });
-        console.log(this.routParams);
         this.usersService.getByUsername(this.routParams)
             .subscribe(userJson => this.user = userJson);
     }

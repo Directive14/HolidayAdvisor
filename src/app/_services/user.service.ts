@@ -13,7 +13,7 @@ export class UserService {
     }
 
     getByUsername(username) {
-        return this.http.get('http://localhost:3000/api/users/'+ username)
+        return this.http.get('http://localhost:3000/api/users/'+ String(username))
             .map((res: Response) => res.json())
     }
 

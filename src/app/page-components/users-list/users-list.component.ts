@@ -5,13 +5,13 @@ import { User } from '../../_models';
 import { UserService } from '../../_services';
 
 @Component({
-  selector: 'app-users-list',
-  templateUrl: './users-list.component.html'
+    selector: 'app-users-list',
+    templateUrl: './users-list.component.html'
 })
 export class UsersListComponent implements OnInit {
- found:Object;
- @Input() users: User[];
- @Input() currentUser: User = new User;
+    found: Object;
+    @Input() users: User[];
+    @Input() currentUser: User = new User;
     constructor(
         private http: Http,
         private usersService: UserService
@@ -20,17 +20,17 @@ export class UsersListComponent implements OnInit {
     }
     ngOnInit() {
         this.usersService.getAll()
-            .subscribe(usersJson => {this.users.push(...usersJson)
+            .subscribe(usersJson => {
+                this.users.push(...usersJson)
 
-        let storageUser = JSON.parse(localStorage.getItem('currentUser')).user;
-        this.currentUser.username = storageUser.username;
+                let storageUser = JSON.parse(localStorage.getItem('currentUser')).user;
+                this.currentUser.username = storageUser.username;
 
-        for(let i=0; i< this.users.length; i++){
-            if(this.users[i].username===this.currentUser.username){
-                this.users[i]=null;
-               
-            }
-        }
+                for (let i = 0; i < this.users.length; i++) {
+                    if (this.users[i].username === this.currentUser.username) {
+                        this.users[i] = null;
+                    }
+                }
             });
     }
 }
