@@ -27,6 +27,7 @@ import { AgmCoreModule } from 'angular2-google-maps/core';
 import {GoogleMapComponent} from './page-components/google-map';
 import { UpdateProfileComponent } from './page-components/update-profile/update-profile.component';
 import { OtherPersonProfileComponent } from './page-components/other-person-profile/other-person-profile.component';
+import { UsersListComponent } from './page-components/users-list/users-list.component';
 
 @NgModule({
     imports: [
@@ -60,7 +61,8 @@ import { OtherPersonProfileComponent } from './page-components/other-person-prof
         DropdownOpen,
         GoogleMapComponent,
         UpdateProfileComponent,
-        OtherPersonProfileComponent
+        OtherPersonProfileComponent,
+        UsersListComponent
     ],
     providers: [
         AuthGuard,

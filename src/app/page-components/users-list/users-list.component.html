@@ -1,0 +1,36 @@
+<h3>All Users</h3>
+
+<div class="table-responsive">
+    <table id="users-container" class="table">
+        <tbody>
+            <tr>
+                <td>
+                    <strong>User picture</strong>
+                </td>
+                <td>
+                    <strong>Username</strong>
+                </td>
+                <td>
+                    <strong>Profile</strong>
+                </td>
+            </tr>
+            <tr *ngFor="let user of users">
+                <div *ngIf="user" class="hidden-logged-user">
+                    <td>
+                        <img [src]="user.image" width="200rem" [alt]="user.username">
+                    </td>
+                    <td>
+                        {{user.username}}
+                    </td>
+                    <td>
+                        <div class="content-left col-xs-6">
+                            <a appNavigationHover [routerLink]="['/profile', user.username]" class="btn btn-default col-xs-12">
+                                <span>Go to profile</span>
+                            </a>
+                        </div>
+                    </td>
+                </div>
+            </tr>
+        </tbody>
+    </table>
+</div>
