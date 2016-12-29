@@ -28,7 +28,7 @@ export class UsersListComponent implements OnInit {
 
                 for (let i = 0; i < this.users.length; i++) {
                     if (this.users[i].username === this.currentUser.username) {
-                        this.users[i] = null;
+                        this.users.splice(i,1);
                     }
                 }
             });
