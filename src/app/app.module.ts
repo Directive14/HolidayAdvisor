@@ -26,6 +26,7 @@ import { DropdownNotClosableZone, Dropdown, DropdownOpen } from './_directives/i
 import { AgmCoreModule } from 'angular2-google-maps/core';
 import {GoogleMapComponent} from './page-components/google-map';
 import { UpdateProfileComponent } from './page-components/update-profile/update-profile.component';
+import { OtherPersonProfileComponent } from './page-components/other-person-profile/other-person-profile.component';
 
 @NgModule({
     imports: [
@@ -58,7 +59,8 @@ import { UpdateProfileComponent } from './page-components/update-profile/update-
         DropdownNotClosableZone,
         DropdownOpen,
         GoogleMapComponent,
-        UpdateProfileComponent
+        UpdateProfileComponent,
+        OtherPersonProfileComponent
     ],
     providers: [
         AuthGuard,
