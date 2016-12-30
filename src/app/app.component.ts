@@ -7,7 +7,7 @@ import { Router } from '@angular/router';
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
-  animations:[
+  animations: [
     trigger('movePanel',[
       transition('void => *', [
         style({transform: 'translateY(-100%)'}),
@@ -16,8 +16,10 @@ import { Router } from '@angular/router';
     ])
   ]
 })
+
 export class AppComponent {
-  constructor(private authService:AuthenticationService,private router:Router){}
+  isVisible: boolean = true;
+  constructor(private authService: AuthenticationService, private router: Router) {}
 
   get isLoggedIn(){
     return this.authService.isLoggedIn();
