@@ -18,7 +18,7 @@ import { Component, Input, trigger, state, style, animate, transition } from '@a
 export class GoogleMapComponent {
     @Input() lat: number;
     @Input() lng: number;
-    state: string= 'show';
+    state: string= 'hide';
 
     togglestates() {
     this.state = (this.state === 'hide' ? 'show' : 'hide');
