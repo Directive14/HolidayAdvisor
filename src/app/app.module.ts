@@ -22,7 +22,7 @@ import { CreatePlaceComponent } from './page-components/create-place';
 import { CreatePartnerComponent } from './page-components/create-partner';
 import { ProfileComponent } from './page-components/profile';
 import { StarRatingComponent } from './page-components/star-rating/star-rating.component';
-import { FilterPlaces, SortPlacesBy } from './_pipes';
+import { FilterPlaces, SortPlacesBy, OrderPlacesBy } from './_pipes';
 import { DropdownNotClosableZone, Dropdown, DropdownOpen } from './_directives/index';
 import { AgmCoreModule } from 'angular2-google-maps/core';
 import { GoogleMapComponent } from './page-components/google-map';
@@ -57,6 +57,7 @@ import { UsersListComponent } from './page-components/users-list/users-list.comp
         ProfileComponent,
         FilterPlaces,
         SortPlacesBy,
+        OrderPlacesBy,
         NavigationHoverDirective,
         Dropdown,
         DropdownNotClosableZone,

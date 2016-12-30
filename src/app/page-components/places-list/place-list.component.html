@@ -34,7 +34,7 @@
                     <strong>Rating</strong>
                 </td>
             </tr>
-            <tr *ngFor="let place of (places | filterPlaces:searchinput.value | sortPlacesBy :sortinput.value:orderinput.value)">
+            <tr *ngFor="let place of (places | filterPlaces:searchinput.value | sortPlacesBy :sortinput.value | orderPlacesBy :sortinput.value:orderinput.value)">
                 <td>
                     <img [src]="place.img" width="200rem" [alt]="place.name">
                 </td>
