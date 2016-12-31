@@ -3,6 +3,7 @@ const mongoose = require('mongoose'),
 
 module.exports.init = function() {
     let placeSchema = mongoose.Schema({
+        owner: String,
         img: String,
         name: String,
         rating: Number,

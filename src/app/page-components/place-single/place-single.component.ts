@@ -15,7 +15,14 @@ export class PlaceSingleComponent {
         private route: ActivatedRoute,
         private placesService: PlacesService,
         private router: Router) {
-        this.place = new Place;
+        this.place = {
+            owner: '',
+            img: '',
+            name: '',
+            rating: 1,
+            lat: 0,
+            lng :0
+        }
     }
 
     ngOnInit() {
@@ -41,6 +48,14 @@ export class PlaceSingleComponent {
 
     get rating(): number {
         return this.place.rating;
+    }
+
+    get isOwner(): boolean {
+        if(JSON.parse(localStorage.getItem('currentUser')).user.username === this.place.owner){
+            return true;
+        }else{
+            return false;
+        }
     }
 
     deleatePlace() {
