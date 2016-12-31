@@ -14,6 +14,7 @@ import { PlaceSingleComponent } from './page-components/place-single';
 import { UsersListComponent} from  './page-components/users-list';
 import { OtherPersonProfileComponent } from './page-components/other-person-profile';
 import { UpdateProfileComponent } from './page-components/update-profile';
+import {FeedListComponent} from './page-components/feed-list'
 import { AuthGuard } from './_guards';
 
 const appRoutes: Routes = [
@@ -30,6 +31,7 @@ const appRoutes: Routes = [
     { path: 'createplace', component: CreatePlaceComponent, canActivate: [AuthGuard]  },
     { path: 'partners', component: PartnerListComponent },
     { path: 'createPartner', component: CreatePartnerComponent, canActivate: [AuthGuard]  },
+    { path: 'feed', component: FeedListComponent },
     // otherwise redirect to home
     { path: '**', redirectTo: 'home' },
     { path: '', redirectTo: 'home', pathMatch: 'full' }
