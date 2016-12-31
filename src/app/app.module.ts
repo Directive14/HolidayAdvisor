@@ -10,7 +10,7 @@ import { routing } from './app.routing';
 
 import { AlertComponent, NavigationHoverDirective } from './_directives/index';
 import { AuthGuard } from './_guards/index';
-import { AlertService, AuthenticationService, UserService, PlacesService, PartnerService } from './_services';
+import { AlertService, AuthenticationService, UserService, PlacesService, PartnerService, FeedService } from './_services';
 import { AboutComponent } from './page-components/about';
 import { HomeComponent } from './page-components/home';
 import { LoginComponent } from './page-components/login';
@@ -22,13 +22,15 @@ import { CreatePlaceComponent } from './page-components/create-place';
 import { CreatePartnerComponent } from './page-components/create-partner';
 import { ProfileComponent } from './page-components/profile';
 import { StarRatingComponent } from './page-components/star-rating/star-rating.component';
-import { FilterPlaces, SortPlacesBy, OrderPlacesBy } from './_pipes';
+import { FilterPlaces, SortPlacesBy, OrderPlacesBy, StripHtmlTagsPipe } from './_pipes';
 import { DropdownNotClosableZone, Dropdown, DropdownOpen } from './_directives/index';
 import { AgmCoreModule } from 'angular2-google-maps/core';
 import { GoogleMapComponent } from './page-components/google-map';
 import { UpdateProfileComponent } from './page-components/update-profile/update-profile.component';
 import { OtherPersonProfileComponent } from './page-components/other-person-profile/other-person-profile.component';
 import { UsersListComponent } from './page-components/users-list/users-list.component';
+import { FeedSingleComponent } from './page-components/feed-single/feed-single.component';
+import { FeedListComponent } from './page-components/feed-list/feed-list.component';
 
 @NgModule({
     imports: [
@@ -65,7 +67,10 @@ import { UsersListComponent } from './page-components/users-list/users-list.comp
         GoogleMapComponent,
         UpdateProfileComponent,
         OtherPersonProfileComponent,
-        UsersListComponent
+        UsersListComponent,
+        FeedSingleComponent,
+        FeedListComponent,
+        StripHtmlTagsPipe
     ],
     providers: [
         AuthGuard,
@@ -73,7 +78,8 @@ import { UsersListComponent } from './page-components/users-list/users-list.comp
         AuthenticationService,
         UserService,
         PlacesService,
-        PartnerService
+        PartnerService,
+        FeedService
     ],
     bootstrap: [AppComponent]
 })
