@@ -37,8 +37,8 @@ const appRoutes: Routes = [
     { path: 'createPartner', component: CreatePartnerComponent, canActivate: [AuthGuard] },
     { path: 'feed', component: FeedListComponent },
     // otherwise redirect to home
-    { path: '**', redirectTo: 'notfound' },
-    { path: '', redirectTo: 'home', pathMatch: 'full' }
+    { path: '', redirectTo: 'home', pathMatch: 'full' },
+    { path: '**', redirectTo: 'notfound' }
 ];
 
 export const routing = RouterModule.forRoot(appRoutes);
