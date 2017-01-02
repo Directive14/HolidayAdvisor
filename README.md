@@ -20,10 +20,27 @@ Our project is a website which provides you with information about travel destin
 
 **2.** **npm start** to start the project
 
-### Routes
+## Routes
+- /home -> shows home screen (public)
+- /partners -> shows all partners (public)
+- /feed -> shows blog (public)
+- /about -> shows about us info (public)
+- /login -> log in user (public)
+- /register -> register user (public)
+- /notloggedin -> shows not logged in screen when someone tries to enter private route (public)
+- /notfound -> shows not found screen when someone tries to enter invalid route (public)
+- /logout -> logout (private)
+- /places -> all places (private)
+- /places/:name -> place details (private)
+- /createplace -> add new place (private)
+- /createPartner -> add new partner (private)
+- /profile -> user's profile (private)
+- /profile/:username -> shows user's details page (private)
+- /update -> update user's profile (private)
+- /users -> shows all users (private)
 
 ---------------------------------------------------------------------------------------------------------------------------------
 
-### Links
+## Links
 ##### [<img src="https://rawgit.com/Team-Namor/Presentation/master/imgs/youtube.png" height="22"/> Project's Video](https://youtu.be/C20CeZGH9Ek)
 ##### [<img src="https://maxcdn.icons8.com/Color/PNG/512/Logos/heroku-512.png" height="22"/> HolidayAdvisor in Heroku](https://holiday-advisor.herokuapp.com)
