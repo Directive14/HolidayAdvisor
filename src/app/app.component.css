@@ -1,5 +1,6 @@
 nav {
-    background-image: url('../images/navi.jpg')
+    background-image: url('../images/navi.jpg');
+    margin-bottom: 0px;
 }
 
 footer {
@@ -18,11 +19,13 @@ div.jumbotron {
     background-attachment: fixed;
     width: 100%;
     margin-bottom: 0px;
+    margin-top: 0px;
     min-height: 100vh;
 }
 
 .wrapper {
-    width: 100%
+    width: 100%;
+    margin-bottom: 0px;
 }
 
 #facebook a {
