@@ -16,7 +16,7 @@
             </tr>
             <tr *ngFor="let user of users">
                 <td *ngIf="user" class="hidden-logged-user">
-                    <img [src]="user.image" width="200rem" [alt]="user.username">
+                    <img [src]="user.image" width="200rem" [alt]="user.username" class="img-rounded">
                 </td>
                 <td *ngIf="user" class="hidden-logged-user">
                     {{user.username}}

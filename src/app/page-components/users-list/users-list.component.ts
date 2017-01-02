@@ -6,7 +6,8 @@ import { UserService } from '../../_services';
 
 @Component({
     selector: 'app-users-list',
-    templateUrl: './users-list.component.html'
+    templateUrl: './users-list.component.html',
+    styleUrls: ['./users-list.component.css']
 })
 export class UsersListComponent implements OnInit {
     found: Object;
