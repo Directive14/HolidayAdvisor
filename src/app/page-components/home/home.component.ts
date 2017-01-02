@@ -1,10 +1,25 @@
-﻿import { Component, OnInit } from '@angular/core';
+﻿import { Component, OnInit, trigger, state, transition, style, animate } from '@angular/core';
 
 import { User, Place } from '../../_models';
 import { UserService, PlacesService } from '../../_services';
 
 @Component({
-    templateUrl: './home.component.html'
+    templateUrl: './home.component.html',
+    host: {
+     '[@routeAnimation]': 'true',
+     '[style.display]': "'block'",
+     '[style.position]': "'absolute'"
+   },
+    animations: [
+    trigger('routeAnimation', [
+      state('*', style({transform: 'translateX(0)', opacity: 1})),
+      transition('void => *', [
+        style({transform: 'translateX(-100%)', opacity: 0}),
+        animate(300)
+      ]),
+      transition('* => void', animate(300, style({transform: 'translateX(100%)', opacity: 0})))
+    ])
+  ]
 })
 
 export class HomeComponent implements OnInit {

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, trigger, transition, state, style, animate } from '@angular/core';
 import {FeedService} from '../../_services'
 // Add the RxJS Observable operators we need in this app.
 import './rxjs-operators';
@@ -6,7 +6,21 @@ import './rxjs-operators';
 @Component({
   selector: 'app-feed-list',
   templateUrl: './feed-list.component.html',
-  styleUrls: ['./feed-list.component.css']
+  styleUrls: ['./feed-list.component.css'],
+    host: {
+     '[@routeAnimation]': 'true',
+     '[style.display]': "'block'",
+   },
+    animations: [
+    trigger('routeAnimation', [
+      state('*', style({transform: 'translateX(0)', opacity: 1})),
+      transition('void => *', [
+        style({transform: 'translateX(-100%)', opacity: 0}),
+        animate(300)
+      ]),
+      transition('* => void', animate(300, style({transform: 'translateX(100%)', opacity: 0})))
+    ])
+  ]
 })
 export class FeedListComponent implements OnInit {
 

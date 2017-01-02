@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, transition, animate, state, style, trigger } from '@angular/core';
 import { Http, Response, Headers } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 import { User } from '../../_models';
@@ -7,7 +7,21 @@ import { UserService } from '../../_services';
 @Component({
     selector: 'app-users-list',
     templateUrl: './users-list.component.html',
-    styleUrls: ['./users-list.component.css']
+    styleUrls: ['./users-list.component.css'],
+    host: {
+     '[@routeAnimation]': 'true',
+     '[style.display]': "'block'",
+   },
+    animations: [
+    trigger('routeAnimation', [
+      state('*', style({transform: 'translateX(0)', opacity: 1})),
+      transition('void => *', [
+        style({transform: 'translateY(-100%)', opacity: 0}),
+        animate(300)
+      ]),
+      transition('* => void', animate(300, style({transform: 'translateY(100%)', opacity: 0})))
+    ])
+  ]
 })
 export class UsersListComponent implements OnInit {
     found: Object;
