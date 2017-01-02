@@ -6,7 +6,21 @@ import './rxjs-operators';
 @Component({
   selector: 'app-feed-list',
   templateUrl: './feed-list.component.html',
-  styleUrls: ['./feed-list.component.css']
+  styleUrls: ['./feed-list.component.css'],
+    host: {
+     '[@routeAnimation]': 'true',
+     '[style.display]': "'block'",
+   },
+    animations: [
+    trigger('routeAnimation', [
+      state('*', style({transform: 'translateX(0)', opacity: 1})),
+      transition('void => *', [
+        style({ opacity: 0}),
+        animate(500)
+      ]),
+      transition('* => void', animate(500, style({opacity: 0})))
+    ])
+  ]
 })
 export class FeedListComponent implements OnInit {
 
