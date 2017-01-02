@@ -9,7 +9,7 @@ import { PartnerService } from '../../_services';
     templateUrl: './partners-list.component.html',
     host: {
      '[@routeAnimation]': 'true',
-     '[style.display]': "'block'",
+     '[style.display]': 'block',
    },
     animations: [
     trigger('routeAnimation', [

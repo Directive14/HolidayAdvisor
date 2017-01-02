@@ -5,7 +5,7 @@ import { PlacesService, AlertService, UserService } from '../../_services';
 
 @Component({
     templateUrl: './place-single.component.html',
-    styleUrls:['./place-single.component.css']
+    styleUrls: ['./place-single.component.css']
 })
 export class PlaceSingleComponent {
     @Input() place: Place;
@@ -26,7 +26,7 @@ export class PlaceSingleComponent {
             rating: 1,
             lat: 0,
             lng: 0
-        }
+        };
     }
 
     ngOnInit() {
@@ -50,7 +50,7 @@ export class PlaceSingleComponent {
                 this.alertService.success(`${this.place.name} info updated successful`, true);
                 this.router.navigate([`/places/${this.place.name}`]);
                 this.alertService.clear(3000);
-            })
+            });
     }
 
     get img(): string {
@@ -78,7 +78,7 @@ export class PlaceSingleComponent {
             .subscribe(placeJson => {
                 this.place = placeJson;
                 this.router.navigate(['/places']);
-            })
+            });
 
     }
 }

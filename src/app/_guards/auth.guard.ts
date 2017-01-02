@@ -5,7 +5,7 @@ import { AlertService } from '../_services';
 @Injectable()
 export class AuthGuard implements CanActivate {
 
-    constructor(private router: Router, private alertService : AlertService) { }
+    constructor(private router: Router, private alertService: AlertService) { }
 
     canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
         if (localStorage.getItem('currentUser')) {

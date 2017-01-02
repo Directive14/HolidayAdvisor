@@ -10,26 +10,26 @@ export class PlacesService {
 
     createPlace(place) {
         return this.http.post(this.url, place)
-            .map((res: Response) => res.json())
+            .map((res: Response) => res.json());
     }
 
     getAll() {
         return this.http.get(this.url)
-            .map((res: Response) => res.json())
+            .map((res: Response) => res.json());
     }
 
     updatePlace(place) {
         return this.http.put(this.url, place)
-            .map((res: Response) => res.json())
+            .map((res: Response) => res.json());
     }
 
     deleatePlace(placeName) {
         return this.http.delete(this.url + '/' + placeName)
-            .map((res: Response) => res.json())
+            .map((res: Response) => res.json());
     }
 
     getByName(placeName) {
         return this.http.get(this.url + '/' + placeName)
-            .map((res: Response) => res.json())
+            .map((res: Response) => res.json());
     }
 }

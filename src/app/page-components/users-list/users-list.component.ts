@@ -10,7 +10,7 @@ import { UserService } from '../../_services';
     styleUrls: ['./users-list.component.css'],
     host: {
      '[@routeAnimation]': 'true',
-     '[style.display]': "'block'",
+     '[style.display]': 'block',
    },
     animations: [
     trigger('routeAnimation', [
@@ -36,14 +36,14 @@ export class UsersListComponent implements OnInit {
     ngOnInit() {
         this.usersService.getAll()
             .subscribe(usersJson => {
-                this.users.push(...usersJson)
+                this.users.push (...usersJson);
 
                 let storageUser = this.usersService.getCurrentUser();
                 this.currentUser.username = storageUser.username;
 
                 for (let i = 0; i < this.users.length; i++) {
                     if (this.users[i].username === this.currentUser.username) {
-                        this.users.splice(i,1);
+                        this.users.splice(i, 1);
                     }
                 }
             });

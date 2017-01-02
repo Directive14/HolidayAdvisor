@@ -10,7 +10,7 @@ export class StarRatingComponent implements OnInit {
     @Input() itemId: number;
     @Output() ratingClick: EventEmitter<any> = new EventEmitter<any>();
 
-    inputName:string;
+    inputName: string;
     ngOnInit() {
       this.inputName = this.itemId + '_rating';
     }

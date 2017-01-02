@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
   templateUrl: './update-profile.component.html',
     host: {
      '[@routeAnimation]': 'true',
-     '[style.display]': "'block'",
+     '[style.display]': 'block',
    },
     animations: [
     trigger('routeAnimation', [
@@ -23,13 +23,14 @@ import { Router } from '@angular/router';
     ])
   ]
 })
-export class UpdateProfileComponent{
+export class UpdateProfileComponent {
   @Input() user: User = new User;
 
   constructor( private http: Http,
         private router: Router,
         private userService: UserService) {}
-        
+
+        // tslint:disable-next-line:use-life-cycle-interface
         ngOnInit() {
         let storageUser = this.userService.getCurrentUser();
         this.user.username = storageUser.username;
@@ -40,13 +41,13 @@ export class UpdateProfileComponent{
 
   onSubmit() {
         this.userService.update(this.user)
-        .subscribe( dbItem =>{
+        .subscribe( dbItem => {
         this.user.email = dbItem.email;
         this.user.about = dbItem.about;
-        this.user.image = dbItem.image
+        this.user.image = dbItem.image;
         this.router.navigate(['/profile']);
         }
-        )
+        );
     }
 
 }

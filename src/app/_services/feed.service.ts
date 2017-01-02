@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Http, Response } from '@angular/http';
 import {Observable} from 'rxjs/Rx';
-import { Feed } from '../_models/feed'
+import { Feed } from '../_models/feed';
 
 @Injectable()
 export class FeedService {

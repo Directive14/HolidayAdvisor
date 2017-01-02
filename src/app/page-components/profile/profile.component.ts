@@ -8,7 +8,7 @@ import { ActivatedRoute, Router } from '@angular/router';
     templateUrl: './profile.component.html',
     host: {
      '[@routeAnimation]': 'true',
-     '[style.display]': "'block'",
+     '[style.display]': 'block',
    },
     animations: [
     trigger('routeAnimation', [
@@ -21,12 +21,12 @@ import { ActivatedRoute, Router } from '@angular/router';
     ])
   ]
 })
-export class ProfileComponent implements OnInit{
+export class ProfileComponent implements OnInit {
     @Input() currentUser: User = this.userService.getCurrentUser();
      storageUser: User;
 
     constructor(private userService: UserService, private router: Router) {
-        this.storageUser=new User;
+        this.storageUser = new User;
     }
     ngOnInit() {
         let storageUserUsername = this.userService.getCurrentUser().username;
@@ -39,6 +39,6 @@ export class ProfileComponent implements OnInit{
             .subscribe(dbUser => {
                 this.currentUser = dbUser;
                 this.router.navigate(['/register']);
-            })
+            });
     }
 }

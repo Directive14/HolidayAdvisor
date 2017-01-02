@@ -10,7 +10,7 @@ export class OrderPlacesBy implements PipeTransform {
                 return places.sort((a, b) => {
                     return a[sortBy].toString().localeCompare(b[sortBy].toString());
                 });
-            }else{
+            }else {
                  return places.sort((a, b) => {
                     return b[sortBy].toString().localeCompare(a[sortBy].toString());
                 });

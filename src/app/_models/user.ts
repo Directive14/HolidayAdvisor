@@ -9,6 +9,6 @@
     email: string;
     about: string;
     image: string;
-    rating: string
-    createdOn: Date
+    rating: string;
+    createdOn: Date;
 }

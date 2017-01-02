@@ -14,7 +14,7 @@ export class OtherPersonProfileComponent {
 
     constructor(private route: ActivatedRoute, private usersService: UserService) {
         this.user = {
-            id :0,
+            id : 0,
             username: '',
             password: '',
             firstName: '',
@@ -26,7 +26,7 @@ export class OtherPersonProfileComponent {
             image: '',
             rating: '',
             createdOn: new Date()
-        }
+        };
     }
 
     ngOnInit() {
@@ -36,7 +36,7 @@ export class OtherPersonProfileComponent {
                 this.routParams = params['username'];
             });
         this.usersService.getByUsername(this.routParams)
-            .subscribe(userJson => { this.user = new User; this.user = userJson });
+            .subscribe(userJson => { this.user = new User; this.user = userJson; });
     }
 
     get img(): string {

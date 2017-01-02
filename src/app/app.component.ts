@@ -27,9 +27,9 @@ import { Router } from '@angular/router';
 export class AppComponent {
   isVisible: boolean = true;
   constructor(
-    private authService: AuthenticationService, 
+    private authService: AuthenticationService,
     private router: Router,
-    private userService : UserService) { }
+    private userService: UserService) { }
 
   get isLoggedIn() {
     return this.authService.isLoggedIn();

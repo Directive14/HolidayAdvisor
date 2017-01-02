@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
     templateUrl: './create-place.component.html',
     host: {
      '[@routeAnimation]': 'true',
-     '[style.display]': "'block'"
+     '[style.display]': 'block'
    },
     animations: [
     trigger('routeAnimation', [
@@ -35,15 +35,15 @@ export class CreatePlaceComponent {
     ) {
         this.place = {
             owner: this.userService.getCurrentUser().username,
-            info:'',
+            info: '',
             img: '',
             name: '',
             rating: 1,
             lat: 0,
-            lng :0
-        }
+            lng : 0
+        };
     }
-   
+
     onSubmit() {
         this.placeService.createPlace(this.place)
             .subscribe(

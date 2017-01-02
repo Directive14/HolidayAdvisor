@@ -24,6 +24,7 @@ import './rxjs-operators';
 })
 export class FeedListComponent implements OnInit {
 
+ // tslint:disable-next-line:max-line-length
  private feedUrl: string = 'https%3A%2F%2Fwww.theguardian.com%2Fuk%2Ftravel%2Frss&api_key=gk0gh49rwtwabgdj5gehtoacztkvyis1igf15ahi&order_dir=desc&count=20';
   private feeds: any;
   constructor(private feedService: FeedService) { }

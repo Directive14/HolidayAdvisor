@@ -40,7 +40,7 @@ export class PlaceListComponent implements OnInit {
 
      SearchByTitle(value: any) {
          let result = [].concat(this.places);
-         return result.filter(p => p.name.indexOf(value) > 0); 
+         return result.filter(p => p.name.indexOf(value) > 0);
     }
 
     ratingComponetClick(clickObj: any): void {

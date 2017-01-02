@@ -13,8 +13,8 @@ export class UserService {
     }
 
     getByUsername(username) {
-        return this.http.get('http://localhost:3000/api/users/'+ String(username))
-            .map((res: Response) => res.json())
+        return this.http.get('http://localhost:3000/api/users/' + String(username))
+            .map((res: Response) => res.json());
     }
 
     create(user: User) {
@@ -25,15 +25,15 @@ export class UserService {
          return this.http.put('http://localhost:3000/api/users/' + user.username, user).map((response: Response) => response.json());
     }
 
-    getCurrentUser(){
+    getCurrentUser() {
         return JSON.parse(localStorage.getItem('currentUser')).user;
     }
 
     deleteUser(username) {
         return this.http.delete('http://localhost:3000/api/users/' + username)
-            .map((res: Response) => res.json())
+            .map((res: Response) => res.json());
     }
-    
+
     private jwt() {
         // create authorization header with jwt token
         let currentUser = JSON.parse(localStorage.getItem('currentUser'));

@@ -1,16 +1,16 @@
-import {Directive, ElementRef, ContentChild, Output, EventEmitter, Input} from "@angular/core";
-import {DropdownNotClosableZone} from "./dropdown-not-closable-zone.directive";
+import {Directive, ElementRef, ContentChild, Output, EventEmitter, Input} from '@angular/core';
+import {DropdownNotClosableZone} from './dropdown-not-closable-zone.directive';
 
 @Directive({
-    selector: "[dropdown]",
-    exportAs: "dropdown"
+    selector: '[dropdown]',
+    exportAs: 'dropdown'
 })
 export class Dropdown {
 
-    @Input("dropdownToggle")
+    @Input('dropdownToggle')
     toggleClick = true;
 
-    @Input("dropdownFocusActivate")
+    @Input('dropdownFocusActivate')
     activateOnFocus = false;
 
     @Output()
@@ -27,24 +27,25 @@ export class Dropdown {
 
     open() {
         const element: HTMLElement = this.elementRef.nativeElement;
-        element.classList.add("open");
+        element.classList.add('open');
         this.onOpen.emit(undefined);
     }
 
     close() {
         const element: HTMLElement = this.elementRef.nativeElement;
-        element.classList.remove("open");
+        element.classList.remove('open');
         this.onClose.emit(undefined);
     }
 
     isOpened() {
         const element: HTMLElement = this.elementRef.nativeElement;
-        return element.classList.contains("open");
+        return element.classList.contains('open');
     }
 
     isInClosableZone(element: HTMLElement) {
-        if (!this.notClosableZone)
+        if (!this.notClosableZone) {
             return false;
+        }
 
         return this.notClosableZone.contains(element);
     }

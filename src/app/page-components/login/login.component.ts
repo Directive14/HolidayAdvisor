@@ -7,7 +7,7 @@ import { AlertService, AuthenticationService } from '../../_services';
     templateUrl: './login.component.html',
     host: {
      '[@routeAnimation]': 'true',
-     '[style.display]': "'block'",
+     '[style.display]': 'block',
    },
     animations: [
     trigger('routeAnimation', [
@@ -41,7 +41,7 @@ export class LoginComponent implements OnInit {
         this.authenticationService.login(this.model.username, this.model.password)
             .subscribe(
             data => {
-                this.alertService.success(`User ${this.model.username} logged in successful!`, true)
+                this.alertService.success(`User ${this.model.username} logged in successful!`, true);
                 this.router.navigate(['/home']);
                 this.alertService.clear(3000);
             },
