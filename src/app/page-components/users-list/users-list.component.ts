@@ -10,7 +10,7 @@ import { UserService } from '../../_services';
     styleUrls: ['./users-list.component.css'],
     host: {
      '[@routeAnimation]': 'true',
-     '[style.display]': 'block',
+     '[style.display]': "'block'",
    },
     animations: [
     trigger('routeAnimation', [

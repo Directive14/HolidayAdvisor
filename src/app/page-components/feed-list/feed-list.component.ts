@@ -9,7 +9,7 @@ import './rxjs-operators';
   styleUrls: ['./feed-list.component.css'],
     host: {
      '[@routeAnimation]': 'true',
-     '[style.display]': 'block',
+     '[style.display]': "'block'",
    },
     animations: [
     trigger('routeAnimation', [

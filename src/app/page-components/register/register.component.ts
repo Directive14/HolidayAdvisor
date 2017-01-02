@@ -7,7 +7,7 @@ import { AlertService, UserService} from '../../_services';
     templateUrl: './register.component.html',
     host: {
      '[@routeAnimation]': 'true',
-     '[style.display]': 'block',
+     '[style.display]': "'block'",
    },
     animations: [
     trigger('routeAnimation', [

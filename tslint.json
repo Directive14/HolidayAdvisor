@@ -57,8 +57,9 @@
       "check-else",
       "check-whitespace"
     ],
+    //turned off because angularjs2!
     "quotemark": [
-      true,
+      false,
       "single"
     ],
     "radix": true,

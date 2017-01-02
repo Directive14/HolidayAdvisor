@@ -7,7 +7,7 @@ import { PlacesService } from '../../_services';
     templateUrl: './home.component.html',
     host: {
      '[@routeAnimation]': 'true',
-     '[style.display]': 'block',
+     '[style.display]': "'block'",
    },
     animations: [
     trigger('routeAnimation', [
