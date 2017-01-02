@@ -4,7 +4,8 @@ import { Place } from '../../_models';
 import { PlacesService, AlertService } from '../../_services';
 
 @Component({
-    templateUrl: './place-single.component.html'
+    templateUrl: './place-single.component.html',
+    styleUrls:['./place-single.component.css']
 })
 export class PlaceSingleComponent {
     @Input() place: Place;
