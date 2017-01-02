@@ -7,21 +7,7 @@ import { StarRatingComponent } from '../star-rating';
 
 @Component({
     templateUrl: './place-list.component.html',
-    styleUrls:  ['./place-list.component.css'],
-    host: {
-     '[@routeAnimation]': 'true',
-     '[style.display]': "'block'",
-   },
-    animations: [
-    trigger('routeAnimation', [
-      state('*', style({transform: 'translateX(0)', opacity: 1})),
-      transition('void => *', [
-        style({transform: 'translateY(-100%)', opacity: 0}),
-        animate(500)
-      ]),
-      transition('* => void', animate(500, style({transform: 'translateY(100%)', opacity: 0})))
-    ])
-  ]
+    styleUrls:  ['./place-list.component.css']
 })
 export class PlaceListComponent implements OnInit {
     ratingClicked: number;
