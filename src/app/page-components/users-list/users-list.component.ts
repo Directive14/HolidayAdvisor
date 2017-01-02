@@ -38,7 +38,7 @@ export class UsersListComponent implements OnInit {
             .subscribe(usersJson => {
                 this.users.push(...usersJson)
 
-                let storageUser = JSON.parse(localStorage.getItem('currentUser')).user;
+                let storageUser = this.usersService.getCurrentUser();
                 this.currentUser.username = storageUser.username;
 
                 for (let i = 0; i < this.users.length; i++) {

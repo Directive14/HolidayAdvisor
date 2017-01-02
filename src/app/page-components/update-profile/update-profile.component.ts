@@ -31,7 +31,7 @@ export class UpdateProfileComponent{
         private userService: UserService) {}
         
         ngOnInit() {
-        let storageUser = JSON.parse(localStorage.getItem('currentUser')).user;
+        let storageUser = this.userService.getCurrentUser();
         this.user.username = storageUser.username;
         this.user.about = storageUser.about;
         this.user.image = storageUser.image;

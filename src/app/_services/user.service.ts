@@ -17,10 +17,6 @@ export class UserService {
             .map((res: Response) => res.json())
     }
 
-    // getById(id: number) {
-    //     return this.http.get('/api/users/' + id, this.jwt()).map((response: Response) => response.json());
-    // }
-
     create(user: User) {
         return this.http.post('http://localhost:3000/api/signup', user, this.jwt()).map((response: Response) => response.json());
     }
@@ -29,12 +25,10 @@ export class UserService {
          return this.http.put('http://localhost:3000/api/users/' + user.username, user).map((response: Response) => response.json());
     }
 
-    // delete(id: number) {
-    //     return this.http.delete('http://localhost:3000/api/users/' + id, this.jwt()).map((response: Response) => response.json());
-    // }
-
-    // private helper methods
-
+    getCurrentUser(){
+        return JSON.parse(localStorage.getItem('currentUser')).user;
+    }
+    
     private jwt() {
         // create authorization header with jwt token
         let currentUser = JSON.parse(localStorage.getItem('currentUser'));

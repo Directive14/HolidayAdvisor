@@ -21,14 +21,14 @@ import { UserService } from '../../_services';
   ]
 })
 export class ProfileComponent implements OnInit{
-    @Input() currentUser: User = JSON.parse(localStorage.getItem('currentUser')).user;
+    @Input() currentUser: User = this.userService.getCurrentUser();
      storageUser: User;
 
     constructor(private userService: UserService) {
         this.storageUser=new User;
     }
     ngOnInit() {
-        let storageUserUsername = JSON.parse(localStorage.getItem('currentUser')).user.username;
+        let storageUserUsername = this.userService.getCurrentUser().username;
         this.userService.getByUsername(storageUserUsername).subscribe(dbUser => this.currentUser = dbUser);
     }
 }
