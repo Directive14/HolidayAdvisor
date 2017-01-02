@@ -10,7 +10,7 @@ import { StarRatingComponent } from '../star-rating';
     styleUrls:  ['./place-list.component.css'],
     host: {
      '[@routeAnimation]': 'true',
-     '[style.display]': "'block'",
+     '[style.display]': 'block',
    },
     animations: [
     trigger('routeAnimation', [
@@ -38,9 +38,9 @@ export class PlaceListComponent implements OnInit {
             .subscribe(placesJson => this.places.push(...placesJson));
     }
 
-     SearchByTitle(value:any){
-         let result=[].concat(this.places);
-         return result.filter(p=>p.name.indexOf(value)>0); 
+     SearchByTitle(value: any) {
+         let result = [].concat(this.places);
+         return result.filter(p => p.name.indexOf(value) > 0); 
     }
 
     ratingComponetClick(clickObj: any): void {
@@ -49,7 +49,7 @@ export class PlaceListComponent implements OnInit {
             item[0].rating = clickObj.rating;
             this.ratingClicked = clickObj.rating;
             this.itemIdRatingClicked = clickObj.itemId;
-            this.placesService.updatePlace(item[0]).subscribe(dbItem=>item[0].rating=dbItem.rating)
+            this.placesService.updatePlace(item[0]).subscribe(dbItem => item[0].rating = dbItem.rating);
         }
     }
 }

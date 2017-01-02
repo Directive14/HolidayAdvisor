@@ -1,5 +1,5 @@
 import { Component, OnInit, trigger, transition, state, style, animate } from '@angular/core';
-import {FeedService} from '../../_services'
+import {FeedService} from '../../_services';
 // Add the RxJS Observable operators we need in this app.
 import './rxjs-operators';
 
@@ -9,7 +9,7 @@ import './rxjs-operators';
   styleUrls: ['./feed-list.component.css'],
     host: {
      '[@routeAnimation]': 'true',
-     '[style.display]': "'block'",
+     '[style.display]': 'block',
    },
     animations: [
     trigger('routeAnimation', [

@@ -7,7 +7,7 @@ import { PlacesService } from '../../_services';
     templateUrl: './home.component.html',
     host: {
      '[@routeAnimation]': 'true',
-     '[style.display]': "'block'",
+     '[style.display]': 'block',
    },
     animations: [
     trigger('routeAnimation', [
@@ -33,6 +33,6 @@ export class HomeComponent implements OnInit {
     }
 
     private loadPlaces() {
-        this.placeService.getAll().subscribe(placesData => { this.places = placesData });
+        this.placeService.getAll().subscribe(placesData => { this.places = placesData; });
     }
 }

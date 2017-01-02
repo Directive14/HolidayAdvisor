@@ -4,7 +4,7 @@ import { Component, transition, trigger, state, style, animate } from '@angular/
     templateUrl: './about.component.html',
     host: {
      '[@routeAnimation]': 'true',
-     '[style.position]': "'absolute'"
+     '[style.position]': 'absolute'
    },
     animations: [
     trigger('routeAnimation', [
@@ -16,7 +16,7 @@ import { Component, transition, trigger, state, style, animate } from '@angular/
       transition('* => void', animate(300, style({transform: 'translateX(100%)', opacity: 0})))
     ])
   ]
-    
+
 })
 export class AboutComponent {
     developers: any[] = [
@@ -35,5 +35,5 @@ export class AboutComponent {
             git: 'https://github.com/TonyNikolov',
             academy: 'https://telerikacademy.com/Users/Tony_Nikolov'
         },
-    ]
+    ];
 }
