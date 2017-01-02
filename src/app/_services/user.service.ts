@@ -28,6 +28,11 @@ export class UserService {
     getCurrentUser(){
         return JSON.parse(localStorage.getItem('currentUser')).user;
     }
+
+    deleteUser(username) {
+        return this.http.delete('http://localhost:3000/api/users/' + username)
+            .map((res: Response) => res.json())
+    }
     
     private jwt() {
         // create authorization header with jwt token
